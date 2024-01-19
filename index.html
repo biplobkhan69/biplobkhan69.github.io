@@ -58,7 +58,7 @@
         <div class="container">
             <div class="infos">
                 <h6 class="subtitle">hello, I'm</h6>
-                <h6 class="title" id="animatedTitle">Biplob hasan Khan</h6>
+                <h6 class="title" id="animatedTitle">Biplob Hasan Khan</h6>
                 <p>UI/UX Designer</p>
     
                 <div class="buttons pt-3">
@@ -80,36 +80,42 @@
     </header>
 
     <style>
-        .title {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .buttons button,
-        .socials a {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .title.animated,
-        .buttons button.animated,
-        .socials a.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        /* styles.css */
+
+.subtitle,
+.title,
+.buttons button,
+.socials a {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.subtitle.animated,
+.title.animated,
+.buttons button.animated,
+.socials a.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
     </style>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            const subtitle = document.querySelector('.subtitle');
             const title = document.getElementById('animatedTitle');
             const hireBtn = document.getElementById('hireBtn');
             const cvBtn = document.getElementById('cvBtn');
+            const socialLinks = document.querySelectorAll('.socials a');
         
+            subtitle.classList.add('animated');
             title.classList.add('animated');
             hireBtn.classList.add('animated');
             cvBtn.classList.add('animated');
+        
+            socialLinks.forEach((link) => {
+                link.classList.add('animated');
+            });
         });
     </script>
 
