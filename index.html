@@ -57,26 +57,61 @@
     <header class="header" id="home">
         <div class="container">
             <div class="infos">
-                <h6 class="subtitle">hello,I'm</h6>
-                <h6 class="title">James Smith</h6>
+                <h6 class="subtitle">hello, I'm</h6>
+                <h6 class="title" id="animatedTitle">Biplob hasan Khan</h6>
                 <p>UI/UX Designer</p>
-
+    
                 <div class="buttons pt-3">
-                    <button class="btn btn-primary rounded">HIRE ME</button>
-                    <button class="btn btn-dark rounded">DOWNLOAD CV</button>
-                </div>      
-
+                    <button class="btn btn-primary rounded" id="hireBtn">HIRE ME</button>
+                    <button class="btn btn-dark rounded" id="cvBtn">DOWNLOAD CV</button>
+                </div>
+    
                 <div class="socials mt-4">
                     <a class="social-item" href="javascript:void(0)"><i class="ti-facebook"></i></a>
                     <a class="social-item" href="javascript:void(0)"><i class="ti-google"></i></a>
                     <a class="social-item" href="javascript:void(0)"><i class="ti-github"></i></a>
                     <a class="social-item" href="javascript:void(0)"><i class="ti-twitter"></i></a>
                 </div>
-            </div>              
+            </div>
             <div class="img-holder">
                 <img src="assets/imgs/man.svg" alt="">
-            </div>      
-        </div>  
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .title {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .buttons button,
+        .socials a {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .title.animated,
+        .buttons button.animated,
+        .socials a.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const title = document.getElementById('animatedTitle');
+            const hireBtn = document.getElementById('hireBtn');
+            const cvBtn = document.getElementById('cvBtn');
+        
+            title.classList.add('animated');
+            hireBtn.classList.add('animated');
+            cvBtn.classList.add('animated');
+        });
+    </script>
 
         <!-- Header-widget -->
         <div class="widget">
